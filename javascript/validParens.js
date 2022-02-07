@@ -25,13 +25,20 @@ Output: false
  * @return {boolean}
  */
 var isValid = function (s) {
-    let isValid = true;
-    for (i = 0; i<s.length; i++){
-        if (s[i] === '('){
 
-        }
+    const stack = [];
+    const table = {
+        ')': '(',
+        '}': '{',
+        ']': '[',
     }
-    return isValid;
+
+    for(let char of s){
+        if (!table[char]) stack.push(char);
+        else if(stack.pop() !== table[char]) return false;
+    }
+
+    return stack.length === 0;
 };
 
 console.log(isValid(s = "()[]{}"))
