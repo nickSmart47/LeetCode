@@ -33,12 +33,24 @@ var isValid = function (s) {
         ']': '[',
     }
 
-    for(let char of s){
+    for (let char of s) {
         if (!table[char]) stack.push(char);
-        else if(stack.pop() !== table[char]) return false;
+        else if (stack.pop() !== table[char]) return false;
     }
 
     return stack.length === 0;
 };
 
 console.log(isValid(s = "()[]{}"))
+
+const isValid = (s) => {
+    const stack = [];
+    for (const c of s) {
+        if (c === '{' || c === '[' || c === '(') stack.push(c);
+        else {
+            const p = stack.pop(); // No need to check for empty before popping (returns undefined)
+            if ((c === '}' && p !== '{') || (c === ']' && p !== '[') || (c === ')') & (p !== '(')) return false;
+        }
+    }
+    return stack.length === 0;
+};
