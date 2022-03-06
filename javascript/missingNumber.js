@@ -44,17 +44,15 @@ var missingNumber = function (nums) {
     let numberObj = {}
 
     for (let i = 0; i < nums.length; i++) {
-        // console.log(nums[i])
         numberObj[nums[i]] = 1;
     }
 
-    // console.log(numberObj)
 
     for (let j = 0; j <= nums.length; j++) {
-        // console.log(j)
+        // loop through array again, check to see if any number in range of nums.length is NOT in the numberObj...
         if (!(j.toString() in numberObj)) {
+            // if so, set missing equal to that value
             missing = j;
-            // console.log(j)
         }
     }
 
