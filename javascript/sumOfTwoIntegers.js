@@ -21,16 +21,20 @@ Constraints:
  * @param {number} b
  * @return {number}
  */
-// var getSum = function (a, b) {
-//     while (b != 0){
-//         let temp = (a & b) << 1;
-//         a = a ^ b;
-//         b = temp;
-//     }
-//     return a;
-// };
+var getSum = function (a, b) {
+    //while condition tells algorithm to repeat until there are no more carries
+    while (b != 0){
+        // temp represents the carry value, finds all bit positions with the case 1+1.
+        // since addition results in 0, carry gets shifted to the left by 1 (using '<< 1')
+        let temp = (a & b) << 1;
+        // '^' represents the XOR operator... handles case 0+1 and 1+0
+        a = a ^ b;
+        b = temp;
+    }
+    return a;
+};
 
-var getSum = function (a, b){
+var getSumQuick = function (a, b){
     if (b==0) return a;
     return getSum(a ^ b, (a & b) <<1);
 }
