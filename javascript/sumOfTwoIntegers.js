@@ -21,14 +21,19 @@ Constraints:
  * @param {number} b
  * @return {number}
  */
-var getSum = function (a, b) {
-    while (b != 0){
-        let temp = (a & b) << 1;
-        a = a ^ b;
-        b = temp;
-    }
-    return a;
-};
+// var getSum = function (a, b) {
+//     while (b != 0){
+//         let temp = (a & b) << 1;
+//         a = a ^ b;
+//         b = temp;
+//     }
+//     return a;
+// };
+
+var getSum = function (a, b){
+    if (b==0) return a;
+    return getSum(a ^ b, (a & b) <<1);
+}
 
 console.log(getSum(a = 1, b = 2));
 console.log(getSum(a = 2, b = 3));
