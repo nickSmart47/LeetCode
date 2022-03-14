@@ -24,24 +24,23 @@ Output: false
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function (s) {
+// var isValid = function (s) {
 
-    const stack = [];
-    const table = {
-        ')': '(',
-        '}': '{',
-        ']': '[',
-    }
+//     const stack = [];
+//     const table = {
+//         ')': '(',
+//         '}': '{',
+//         ']': '[',
+//     }
 
-    for (let char of s) {
-        if (!table[char]) stack.push(char);
-        else if (stack.pop() !== table[char]) return false;
-    }
+//     for (let char of s) {
+//         if (!table[char]) stack.push(char);
+//         else if (stack.pop() !== table[char]) return false;
+//     }
 
-    return stack.length === 0;
-};
+//     return stack.length === 0;
+// };
 
-console.log(isValid(s = "()[]{}"))
 
 const isValid = (s) => {
     const stack = [];
@@ -54,3 +53,8 @@ const isValid = (s) => {
     }
     return stack.length === 0;
 };
+
+console.log(isValid(s = "()[]{}"))
+console.log(isValid(s = "()[]}"))
+console.log(isValid(s = ")()[]{}}"))
+
