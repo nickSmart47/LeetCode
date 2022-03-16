@@ -30,10 +30,10 @@ Output: 0
  * @return {number}
  */
 var strStr = function (haystack, needle) {
-    if (haystack == "" || needle == "") {
+    if (needle === "" || needle == haystack) {
         return 0;
     }
-    let indexOfNeedle = 0;
+    let indexOfNeedle;
     //loop through needle (index i) one character at a time
     for (let i = 0; i <= needle.length; i++) {
         //loop through haystack (index j)
@@ -43,19 +43,22 @@ var strStr = function (haystack, needle) {
                 //then move needle and haystack indices up by 1
                 //need to keep track of the INDEX at which needle was found in haystack...
                 //but only if needle is at index 0
-                if (i == 0) {
+                if (i === 0) {
                     indexOfNeedle = j;
                 }
-                console.log('current indices are needle', i, 'haystack', j)
+                // console.log('current indices are needle', i, 'haystack', j)
                 i++;
                 j++;
+                if (j >= needle.length){
+                    break;
+                }
             }
         }
-        //keep doing this until all characters of needle have been found (accomplished by first loop on 36?)
     }
 
     //if needle is found in haystack
-    if (indexOfNeedle > 0){
+    // console.log('current index of needle is', indexOfNeedle)
+    if (indexOfNeedle != null){
         //return index at which it was found
         return indexOfNeedle
         //otherwise return -1 if needle not found in haystack.
@@ -66,3 +69,7 @@ var strStr = function (haystack, needle) {
 console.log(strStr(haystack = "hello", needle = "ll")); // should return 2
 console.log(strStr(haystack = "aaaaa", needle = "bba")); // should return -1
 console.log(strStr(haystack = "", needle = "")); // should return 0
+console.log(strStr(haystack = "abc", needle = "c")); // should return 2
+console.log(strStr(haystack = "aaa", needle = "a")); // should return 0
+
+
