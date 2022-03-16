@@ -76,6 +76,11 @@ var strStr = function (haystack, needle) {
 // console.log(strStr(haystack = "aaa", needle = "aaaa")); // should return -1
 console.log(strStr(haystack = "mississippi", needle = "issip")); // should return 4
 
+var strStrSimple = function(haystack, needle) {
 
+    const findVal = haystack.indexOf(needle);
+
+    return findVal ? findVal : 0;
+}
 
 
