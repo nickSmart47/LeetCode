@@ -36,7 +36,6 @@ var isPalindrome = function (s) {
     // while the character at current index is equal to character at its mirrored index, keep going
     while (leftIdx <= str.length / 2) {
         // if at any point characters are not equal, return false
-        // console.log("comparing", str[leftIdx], "to", str[rightIdx])
         if (str[leftIdx] != str[rightIdx]) {
             return false;
         }
