@@ -33,6 +33,9 @@ var strStr = function (haystack, needle) {
     if (needle === "" || needle == haystack) {
         return 0;
     }
+    else if (needle.length > haystack.length) {
+        return -1;
+    }
     let indexOfNeedle;
     //loop through needle (index i) one character at a time
     for (let i = 0; i <= needle.length; i++) {
@@ -46,7 +49,7 @@ var strStr = function (haystack, needle) {
                 if (i === 0) {
                     indexOfNeedle = j;
                 }
-                // console.log('current indices are needle', i, 'haystack', j)
+                console.log('current indices are needle', i, 'haystack', j)
                 i++;
                 j++;
                 if (j >= needle.length){
@@ -55,7 +58,6 @@ var strStr = function (haystack, needle) {
             }
         }
     }
-
     //if needle is found in haystack
     // console.log('current index of needle is', indexOfNeedle)
     if (indexOfNeedle != null){
@@ -66,10 +68,14 @@ var strStr = function (haystack, needle) {
 
 };
 
-console.log(strStr(haystack = "hello", needle = "ll")); // should return 2
-console.log(strStr(haystack = "aaaaa", needle = "bba")); // should return -1
-console.log(strStr(haystack = "", needle = "")); // should return 0
-console.log(strStr(haystack = "abc", needle = "c")); // should return 2
-console.log(strStr(haystack = "aaa", needle = "a")); // should return 0
+// console.log(strStr(haystack = "hello", needle = "ll")); // should return 2
+// console.log(strStr(haystack = "aaaaa", needle = "bba")); // should return -1
+// console.log(strStr(haystack = "", needle = "")); // should return 0
+// console.log(strStr(haystack = "abc", needle = "c")); // should return 2
+// console.log(strStr(haystack = "aaa", needle = "a")); // should return 0
+// console.log(strStr(haystack = "aaa", needle = "aaaa")); // should return -1
+console.log(strStr(haystack = "mississippi", needle = "issip")); // should return 4
+
+
 
 
