@@ -24,11 +24,21 @@ Output: 4
 var searchInsert = function (nums, target) {
 
     let targetIndex = 0;
+    let targetFound = false;
 
     for (let i = 0; i < nums.length; i++) {
         if (nums[i] == target){
             targetIndex = i;
+            targetFound = true;
         }
+        else if (!targetFound && nums[i] > target){
+            targetIndex = i;
+            break;
+        }
+    }
+
+    if (target > nums[nums.length-1]){
+        targetIndex = nums.length;
     }
 
     return targetIndex;
