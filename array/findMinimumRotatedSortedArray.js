@@ -17,7 +17,7 @@ You must write an algorithm that runs in O(log n) time.
 var findMin = function (nums) {
     let start = 0, end = nums.length - 1;
     while (start < end) {
-        let mid = start + end / 2;
+        let mid = Math.floor((start + end) / 2);
         if (nums[start] < nums[end]) {
             return nums[start];
         }
@@ -29,6 +29,8 @@ var findMin = function (nums) {
     return Math.min(nums[start], nums[end]);
 };
 
-console.log(findMin(nums = [3, 4, 5, 1, 2])) // 1
-console.log(findMin(nums = [4, 5, 6, 7, 0, 1, 2])) // 0
-console.log(findMin(nums = [11, 13, 15, 17])) // 11
+// console.log(findMin(nums = [3, 4, 5, 1, 2])) // 1
+// console.log(findMin(nums = [4, 5, 6, 7, 0, 1, 2])) // 0
+// console.log(findMin(nums = [11, 13, 15, 17])) // 11
+console.log(findMin(nums = [3, 1, 2])) // 11
+
