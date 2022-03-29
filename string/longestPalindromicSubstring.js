@@ -49,6 +49,7 @@ Output: "bb"
 function longestPalindrome(s) {
     let longestPal = "";
 
+    // case for odd numbered palindrome
     for (let center = 0; center < s.length; center++) {
         let leftIndex = center;
         let rightIndex = center;
@@ -59,7 +60,7 @@ function longestPalindrome(s) {
             leftIndex--; rightIndex++;
         }
     }
-
+    // case for even numbered palindrome
     for (let center = 0; center < s.length; center++) {
         let leftIndex = center;
         let rightIndex = center + 1;
