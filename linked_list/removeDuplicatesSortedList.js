@@ -23,5 +23,5 @@ var deleteDuplicates = function (head) {
 
 };
 
-console.log(deleteDuplicates(head = [1, 1, 2])); // [1,2]
-console.log(deleteDuplicates(head = [1, 1, 2, 3, 3])); // [1,2,3]
+//console.log(deleteDuplicates(head = [1, 1, 2])); // [1,2]
+//console.log(deleteDuplicates(head = [1, 1, 2, 3, 3])); // [1,2,3]
