@@ -73,7 +73,7 @@ console.log(myAtoi("1")); // 0
 console.log(myAtoi(
     "21474836460")); // 0
 
-
+// console.log(parseInt("23 wasd".trim()))
 
 
 
