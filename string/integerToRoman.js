@@ -42,8 +42,11 @@ var intToRoman = function (num) {
         I: 1,
     }
     return Object.entries(intRomanMap).reduce((result, [letter, n]) => {
+        // console.log('current letter is', letter, "current number is",n)
         result += letter.repeat(Math.floor(num/n));
+        console.log('current result is', result)
         num %= n;
+        console.log('num is currently', num)
         return result;
     }, "");
 };
