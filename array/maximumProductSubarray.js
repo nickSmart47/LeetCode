@@ -15,11 +15,13 @@ var maxProduct = function (nums) {
     for (let i = 0; i < nums.length; i ++){
         let temp = currentMax * nums[i];
         currentMax = Math.max(nums[i] * currentMax, nums[i] * currentMin, nums[i]);
-        currentMin = Math.max(temp, nums[i] * currentMin, nums[i]);
+        currentMin = Math.min(temp, nums[i] * currentMin, nums[i]);
         result = Math.max(result, currentMax);
     }
-    return Math.max(result, currentMax, currentMin);
+    return result;
 };
 
-console.log(maxProduct(nums = [2,3,-2,4])) // 6
-console.log(maxProduct(nums = [-2,0,-1])) // 0
+// console.log(maxProduct(nums = [2,3,-2,4])) // 6
+// console.log(maxProduct(nums = [-2,0,-1])) // 0
+console.log(maxProduct(nums = [-2,3,-4])) // 24
+
