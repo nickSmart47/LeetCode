@@ -16,7 +16,6 @@ var threeSum = function (nums) {
 
         while (left < right) {
             let threeSum = element + nums[left] + nums[right];
-
             if (threeSum > 0) right--
             else if (threeSum < 0) left++
             else {
