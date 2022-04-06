@@ -8,7 +8,6 @@ Notice that the solution set must not contain duplicate triplets.
  */
 var threeSum = function (nums) {
     nums.sort((a, b) => a - b);
-    console.log({ nums })
     results = [];
 
     for (const [index, element] of nums.entries()) {
@@ -18,7 +17,6 @@ var threeSum = function (nums) {
         let left = index + 1, right = nums.length - 1;
         while (left < right) {
             let threeSum = element + nums[left] + nums[right];
-            console.log(threeSum)
             if (threeSum > 0) {
                 right--
             }
