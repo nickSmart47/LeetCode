@@ -11,24 +11,18 @@ var threeSum = function (nums) {
     results = [];
 
     for (const [index, element] of nums.entries()) {
-        if (index > 0 && element == nums[index - 1]) {
-            continue;
-        }
+        if (index > 0 && element == nums[index - 1]) continue;
         let left = index + 1, right = nums.length - 1;
+
         while (left < right) {
             let threeSum = element + nums[left] + nums[right];
-            if (threeSum > 0) {
-                right--
-            }
-            else if (threeSum < 0) {
-                left++
-            }
+
+            if (threeSum > 0) right--
+            else if (threeSum < 0) left++
             else {
                 results.push([element, nums[left], nums[right]]);
                 left++;
-                while (nums[left] == nums[left - 1] && left < right) {
-                    left++
-                }
+                while (nums[left] == nums[left - 1] && left < right) left++
             }
         }
     }
