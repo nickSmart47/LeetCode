@@ -13,6 +13,6 @@ You must implement a solution with a linear runtime complexity and use only cons
     return Object.keys(counts).find(key => counts[key] === 1);
 };
 
-console.log(singleNumber(nums = [2,2,1])) // 1
+console.log(singleNumber(nums = [1,2,1,3,2,5])) // 1
 console.log(singleNumber(nums = [4,1,2,1,2])) // 4
 console.log(singleNumber(nums = [1])) // 1
