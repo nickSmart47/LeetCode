@@ -7,7 +7,6 @@ You must implement a solution with a linear runtime complexity and use only cons
  */
  var singleNumber = function(nums) {
     const counts = {};
-
     for (const num of nums) {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
