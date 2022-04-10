@@ -5,7 +5,17 @@ You must implement a solution with a linear runtime complexity and use only cons
  * @param {number[]} nums
  * @return {number}
  */
- var singleNumber = function(nums) {
+//below works for number 1 and 2 but not 3
+var singleNumber = function(nums) {
+    const counts = {};
+
+    for (const num of nums) {
+        counts[num] = counts[num] ? counts[num] + 1 : 1;
+    }
+    return Object.keys(counts).find(key => counts[key] === 1);
+};
+
+ var singleNumberThree = function(nums) {
     const counts = {};
     for (const num of nums) {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
