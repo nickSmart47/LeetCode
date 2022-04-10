@@ -10,7 +10,13 @@ You must implement a solution with a linear runtime complexity and use only cons
     for (const num of nums) {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
     }
-    return Object.keys(counts).find(key => counts[key] === 1);
+    let result = []
+    for (count in counts){
+        if (counts[count] == 1){
+            result.push(parseInt(count))
+        }
+    }
+    return result;
 };
 
 console.log(singleNumber(nums = [1,2,1,3,2,5])) // 1
