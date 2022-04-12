@@ -25,5 +25,9 @@ var addBinary = function (a, b) {
   return result;
 };
 
+var addBinaryOneLiner = (a, b) => {
+    return (BigInt(`0b${a}`) + BigInt(`0b${b}`)).toString(2);
+  };
+
 console.log(addBinary((a = "11"), (b = "1"))); // 100
 console.log(addBinary((a = "1010"), (b = "1011"))); // 10101
