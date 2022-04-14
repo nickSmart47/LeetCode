@@ -31,3 +31,6 @@ var addBinaryOneLiner = (a, b) => {
 
 console.log(addBinary((a = "11"), (b = "1"))); // 100
 console.log(addBinary((a = "1010"), (b = "1011"))); // 10101
+
+
+console.log(BigInt(`0b11`))
