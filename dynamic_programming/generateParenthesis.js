@@ -20,13 +20,20 @@ Output: ["()"]
  var generateParenthesis = function(n) {
     const results = [];
 
-    const generateCombinations = (open = 0, close = 0, parenString = '') => {
+    const generateCombinations = (open = 0, close = 0, possibleCombination = '') => {
+        // if close is equal to n, then we have added all parentheses needed for this combination
+        // so we push combination to results
         if (close === n){
-            results.push(parenString);
+            results.push(possibleCombination);
             return;
         }
-        if (open < n) generateCombinations(open+1, close, parenString + '(');
-        if (open > close) generateCombinations(open, close + 1, parenString + ')');
+        // if there are less open parentheses than n, we add an opening parenthesis to this combination
+        // and recursively call generate combinations and increment our open count
+        if (open < n) generateCombinations(open+1, close, possibleCombination + '(');
+        // if there are more open parentheses then closed, then we need to add a closed parenthesis
+        // so we recursively call the generate combo function, this time incrementing our close counter
+        // and adding a closed parentheses to the possibleCombination 
+        if (open > close) generateCombinations(open, close + 1, possibleCombination + ')');
     }
     generateCombinations();
     return results;
