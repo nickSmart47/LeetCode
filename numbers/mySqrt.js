@@ -16,18 +16,16 @@ Note: You are not allowed to use any built-in exponent function or operator, suc
 
     while (start <= end){
         let mid = start + (end - start) /2;
-
         if(mid == x/mid) return mid;
-
         else if(mid < x/mid) {
             result = mid;
-            start = mid+1;
+            start = Math.floor(mid)+1;
         }
         else{
-            end = mid - 1;
+            end = Math.floor(mid) - 1;
         }
     }
-    return result;
+    return Math.floor(result);
 };
 
 console.log(mySqrt(4)) // 2
