@@ -15,14 +15,14 @@ Note: You are not allowed to use any built-in exponent function or operator, suc
     let start = 1, end = x/2, result = 1;
 
     while (start <= end){
-        let mid = start + (end - start) /2;
+        let mid = start + Math.floor((end - start) /2);
         if(mid == x/mid) return mid;
         else if(mid < x/mid) {
             result = mid;
-            start = Math.floor(mid)+1;
+            start = mid+1;
         }
         else{
-            end = Math.floor(mid) - 1;
+            end = mid - 1;
         }
     }
     return Math.floor(result);
@@ -30,3 +30,4 @@ Note: You are not allowed to use any built-in exponent function or operator, suc
 
 console.log(mySqrt(4)) // 2
 console.log(mySqrt(8)) // 2, since square root of 8 is 2.828... and decimal part is truncated.
+console.log(mySqrt(5)) // 1
