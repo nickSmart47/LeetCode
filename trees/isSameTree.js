@@ -15,5 +15,12 @@ Two binary trees are considered the same if they are structurally identical, and
  * @return {boolean}
  */
  var isSameTree = function(p, q) {
-    
+    if (p.val == q.val){
+        if (p.left == q.left){
+            if (p.right == q.right){
+                return true;
+            }
+        }
+    }
+    return false;
 };
